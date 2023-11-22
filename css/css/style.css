@@ -1,0 +1,445 @@
+/* If values for sizing of element properties seem strangely specific at the decimals, is that we sized the pages with px at first, 
+but converted these values later to the corresponding rem and em values as a reccomendation from the lecturer for better accessibility*/
+
+/*-----------------Global styles-----------------*/
+
+/*smooth scrolling of the pages, used when clicking the arrow on the intoduction page*/
+html {
+  scroll-behavior: smooth;
+}
+/* Sets the stadnard text-font, blue gradient as background image*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, #6a85b6, #bac8e0);
+  color : black;
+}
+/* All H1 & H2: All caps. H3 and below: Regular */
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+}
+h2{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+p{
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+/* Gives every link underline and blue color.*/
+a {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  font-size: 1.125rem;
+}
+/*changes the color of the links when hovering*/
+ a:hover {
+  text-decoration-color: rgb(187, 60, 79);
+}
+/*nav defines the navigational section of the webpage*/
+/*sets background color to navigation, sets overflow to hidden, meaning content is clipped and no scrollbars are provided*/
+nav {
+  background-color:  #2c3e50;
+  overflow: hidden;
+}
+
+/* flexbox is used to position  the navigation links all to the center of the page, 
+list-style-type: none to remove bullet points for each list element*/
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Sets display to block, so each element in takes up the available width. 
+positions the links in the center of each block, also remove text decoration 
+so theres no underline on the text and instead add an smooth animation when hovering over the links*/
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.875em 1em;
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.2s;
+
+}
+/*Adds a hover effect to the links in the nav, 
+changes the background color and moves the text two pixels up*/
+nav a:hover {
+  color: white;
+  background-color: #111;
+  transform: translateY(-2px);
+}
+/*article represents independent and self-contained content, used here to wrap the article-pages on the website*/
+/*rounds the corners of the article pages, add some space inside the element*/
+article {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 0.3125em;
+}
+/* Image will keep its original size and width, but those wider than the article will be resized to fit the article width*/
+article img{
+  max-width: 100%;
+}
+/*section can define a subdivision of content, which can help to organize and get structure*/
+/*centers text for user accessibility, and adds padding and rounded edges*/
+section {
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 0.25em;
+  
+}
+
+/*applies bold text and color, removes border, rounds edges, changes cursor to pointer for accessibility*/
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold
+}
+/*changes color of button when hovering for better accessiblilty*/
+button:hover {
+  background-color: #fff;
+  color: #333;
+}
+/*Footer is the bottom part of a page, here it is used for contact information*/
+/*Sets the background color, adds padding around the content within the footer and centers the text within the footer*/
+footer {
+  background-color: rgb(36, 42, 48);
+  color: #fff;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+/* Changes the the text size to the h2 heading in the footer, and also adds some space beneath the heading and contact info */
+footer h2 {
+  font-size: 2em;
+  margin-bottom: 1.875rem; 
+}
+
+/* Makes the text size to the contatct info smaller */
+footer p {
+  margin: 0.625rem 0;
+}
+
+/* Makes the navigation bar fixed so it will always be at the top of the page when scrolling down, have it take up the full width. 
+The z-index manages the stacking order of elements, we have it at 9999 so it will always be in front of every element on the web page */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+/*Common styling for all the title headings on every page (except index.html)*/
+  .title {
+    text-align: center;
+    margin-top: 3.5em;
+    }
+
+/*changes the color of the photographer names on the webpages, so that they are different from the main text */
+.photographer{
+  color: rgb(87, 84, 84);
+}
+
+/* Says that the contact information container in the footer can maximumly take up a certain width, the text is centered to the footer, and white text color */
+.contact-info {
+  max-width: 31.25rem;
+  margin: 0 auto;
+  color: #fff;
+}
+
+/*----------------Main page(index.html)-----------------*/
+
+/*Sets the height of the background image to the hero section, to 100vh, 
+which means that the height of the hero section will be 100% of the viewable site. 
+Have the background image fixed, so it will not scroll with the rest of the page.
+Also positioing the background image to relative so the hero text can be positioned absolute to this element*/
+.hero {
+  background-image: url('../images/campuspilestredet.jpg'); /*By Ssu, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons, lowered the brightness on the image ourselves to make the text on the hero more readable*/
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+ /*Sets the hero text to absolute, so it is positioned within the hero section, 
+ transform property moves the text container 50% from the left and 50% from the top of the hero section, centering it to the background image.
+ Adds a text-shadow to the white text to make it readable in contrast to the image and more accessible*/
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0.188rem 0.188rem 0.375rem #000000;
+}
+/*https://www.scaler.com/topics/circle-in-css/ */
+/*Creates a white circle that the font awesome arrow icon in the hero section is in, taken verbatim from the source, with adjustments to the property values to
+fit our page, and adding extra properties as display:block to change it from inline that the <i> element the arrow is in so the width and height can be applied.*/
+.fa {
+  font-size: 3.125em;
+  margin-top: 3.125em;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  line-height: 0.75em;
+  text-align: center;
+  background-color: white;
+}
+/*adds some space beneath the heading of the hero section*/
+.hero-text h1 {
+  margin-bottom: 1.25rem;
+}
+
+/*Makes the main page wrapper a flexbox, so the aside section and the main content is side by side*/
+.main-page-wrapper {
+  display: flex;
+}
+/*Sizes the aside section to 30% of the main page wrapper*/
+.sidebar {
+  width: 30%;
+  padding: 1.25rem;
+  background-color:#332C27ff;
+  color: #fff;
+}
+/*Gap inbetween points*/
+.sidebar ul li {
+  margin-bottom: 1.5em;
+}
+
+/*Sizes the main content to rest of avaliable space of the main page wrapper, makes a grid layout with 2 columns that have 1 fraction each*/
+.main-page-content {
+  background-color: #B1ADA3ff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: auto;
+}
+
+/*gives section images in the main content the same size*/
+.main-page-content img {
+  width: 18.75rem;
+  height: 12.5rem;
+}
+
+
+/*-------------topical.html----------------*/
+
+/*Displays the topical page wrapper as a grid, with 2 columns, the first column is 3 fractions and the second column is 1 fraction*/
+.topical-wrapper{
+  display: grid;
+  grid-template-columns: 3fr 1fr; 
+  gap: 1.25em;/*Adds a gap between the two columns*/
+  margin: 1.25em;
+}
+/*Makes the related articles at the side of the topical page a flexbox, and direction column so the articles are stacked on top of each other*/
+.related-articles {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+/*Styles each related article box, adds rounded corners and some space inside the box*/
+.related-articles section{
+  background-color: #f5f5f5;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 0.1875em rgba(0,0,0,0.1);
+}
+
+/*------------------accessibility.html-----------------*/
+/*Adds some space to the article that is in the wrapper*/
+.accessibility-wrapper{
+  margin: 2em;
+}
+/*Makes a grid with 3 columns and 2 rows for the points about accessibility*/
+.accessibility-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em; 
+}
+
+.accessibility-grid img {
+  width: 100%;
+  margin: auto; /*centers the image in the section*/
+  max-height: 200px;
+}
+
+.accessibility-grid section {
+  background-color: #f5f5f5;
+  margin: 5%;/*Have the width as relative unit so the grid doesnt overflow the wrapper when the page resizes*/
+  box-shadow: 0 1em 0.5em rgba(0,0,0,0.1);
+}
+
+/*Makes a flexbox for the first test score images, so they are side by side*/
+.index-test-images{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+/*Makes sure the images fit the flexbox*/
+.index-test-images img{
+ width: 33%;
+ margin: 1em;
+ object-fit: cover;
+}
+/*Makes a flexbox for the final test score images, three images at the top, two at the bottom */
+.final-test-images {
+  display: flex;
+  flex-wrap: wrap;/*makes sure that the images that dont fit the width of the flexbox, will be placed on a new line*/
+  justify-content: center;
+}
+/*Chose these values so there is 3 images top two bottom in the flexbox*/
+.final-test-images img {
+  width: 30%;
+  margin: 1%; 
+}
+
+/*----------------------canteen-page---------------------------*/
+
+/*Centers the image and rounds edges of the image*/
+.canteen-img{
+  width: 60%;
+  height: 40%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 3.25em;
+}
+
+/*Centers the text description beneath the canteen image*/
+.canteen-img-paragraph{
+  text-align: center;
+}
+
+/*Grid: Makes two columns where one is 2 fractions and another is 1fraction + gap between*/
+.canteen-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25em;
+  margin: 1.25em;
+}
+/*Rounds edges and adds border on the canteen text-boxes*/
+.canteen-about, .pros-cons{
+  border-width: 0.0625em;
+  border-style: solid;
+  border-color: black;
+  padding: 1.25em;
+  border-radius: 0.625em;
+  background-color: #f9f9f9;
+}
+
+
+  /*-------------other-campus----------------- */
+
+    
+/*Use flexbox to style campus-info correctly with a gap inbetween*/
+  .campus-info {
+    display: flex;
+    gap: 1.5em;
+    }
+    
+/*Styles the boxes that contain info of the campus buildings*/
+    .campus-info section, .library-info{
+      background-color: #f5f5f5;
+      padding: 1em;
+      box-shadow: 0 0.3em 0.6em rgba(0,0,0,0.1);
+      margin: 1em;
+    }
+
+    
+    /*Gives same size to the images in the campus building boxes*/
+    .campus-info img { 
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      height: 200px;
+      object-fit: cover;/*is needed makes the image fill the box we made it in, but keeps the aspect ratio so it leaves enough space for the text to not overflow out of its container when page is resized*/
+      }
+
+    
+    .library-info img{
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+/*------------------media--------------------------*/
+
+
+
+
+
+/*@media query applies only when the screen width is 37.5em er less*/
+@media screen and (max-width: 37.5em) {
+  /*adds appropriate padding*/
+  article {
+    padding: 0.5rem;
+  }
+  /*navigation elements stack in a column instead of side by side*/
+  nav ul {
+    flex-direction: column;
+  }
+  /*Positioning the navbar to relative instead of fixed*/
+  .navbar {
+    position: relative;
+  }
+  /*Makes the grid layout of the sections on the main page into one single fraction*/
+  .main-page-content {
+    grid-template-columns: 1fr;
+  }
+
+  /*changes layout to one single fraction + some margin*/
+  .topical-wrapper {
+    grid-template-columns: 1fr;
+    margin: 0.5rem;
+  }
+
+  /*adds approptiate padding*/
+  .related-articles section {
+    padding: 0.5rem;
+  }
+  .accessibility-grid {
+    grid-template-columns: 1fr; /* see .section-group comment (line 406) */
+  }
+  /*changes flex direction to column, so the images are stacked on top of each other in the article*/
+  .index-test-images, .final-test-images{
+    flex-direction: column;
+  }
+  /*Makes the images fill the width of the article*/
+  .index-test-images img, .final-test-images img{
+    width: 100%;
+  }
+  /*changes layout to one single fraction, so the elements are beneath each other*/
+  .canteen-grid {
+    grid-template-columns: 1fr;
+  }
+  /*Sizes down text*/
+  .canteen-about p, .pros-cons p {  
+    font-size: 0.9em;
+  }
+  /*earlier flexbox is changed to block, making the elements stack on top of each other*/
+  .campus-info {
+    display: block;
+  }
+
+}

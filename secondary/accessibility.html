@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="topical.html">Topical</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href="canteen.html">The P35 canteen</a></li>
+            <li><a href="other-campus.html">Explore Campus</a></li>
+        </ul>
+    </nav>   
+</header>
+
+<main class="accessibility-wrapper">
+  <div class="title">
+    <h1>Accessibility Report</h1>
+    <h2>A brief summary of how we made this site accessible</h2>
+    <h3>Scroll down or click <em><a href="#main-report">here</a></em> if you want to read the full report</h3>
+  </div>
+  <div class="accessibility-grid">
+    <section class="acc-section">
+      <h2>Links</h2>
+      <img src="../images/link.png" alt="Blue underline on a link on our page">
+      <img src="../images/link-hover.png" alt="Red underline while hovering on link">
+      <p>Underline of links change color while hovering over them, to make it more clear that it is a link.</p>
+    </section>
+
+    <section class="acc-section">
+      <h2>Semantic Elements</h2>
+      <img src="../images/sem_elements.jpg" alt="Semantic webpage structure"/><!-----Image taken from https://michaelvbachmann.blog/2020/07/27/semantics-are-here-to-save-the-day/-->
+      <p>Our website is created with semantic elements, which makes it easier for screen readers to read the website.</p>
+    </section>
+
+    <section class="acc-section">
+      <h2>Element titles</h2>
+      <img src="../images/arrowtitle.png" alt="title when hovering over an element">
+      <img src="../images/buttontitle.png" alt="title when hovering over an element">
+      <p>Adding title attributes to elements to notify its action, for example if the link takes you to another page.</p>
+    </section>
+
+    <section class="acc-section">
+      <h2>Buttons</h2>
+      <img src="../images/button.png" alt="dark button without hovering over it">
+      <img src="../images/button-hover.jpg" alt="lighter button while hovering over it">
+      <p>Buttons that invert colors while hovering over, added a thicker font to make it more readable</p>
+    </section>
+
+    <section class="acc-section">
+      <h2>This report was done with the help of Google Lighthouse</h2>
+      <img src="../images/lighthouse.jpg" alt="">
+    </section>
+
+    <section class="acc-section">
+      <h2>Accessible attributes used</h2>
+      <img src="../images/alt-text2.png" alt="picture of alt & title attribute used in HTML code">
+      <p>Added alt text to all relevant images, and title and aria labels to links to make it more accessible for screen readers.</p>
+    </section>
+  </div>
+
+  <article class="accessibility-report" id="main-report"> 
+    <h1>Accessibility Testing Report</h1>
+    <p>We conducted an accessibility test with Google Lighthouse website to check for compliance with W3C WAI standards. Inclusive web design is important in the making of websites so eveyrone can participate on the internet independent of ones disability or age. With running these tests can we make sure that everyone has equal content to our pages and information on campus. We started running the automated tests on our introduction page, implemented the recommended changes to every site and and then progressed to the next page</p> 
+    <h2>Index.html Test</h2>
+    <div class="index-test-images">
+      <img src="../images/no-alt.png" alt="First Lighthouse test, report about missing alt text">
+      <img src="../images/non-descriptive-button.png" alt="Second Lighthouse test, report about non descriptive links">
+      <img src="../images/low-contrast.png" alt="Third Lighthouse test, report about low color contrast on the page">
+    </div>
+    <h2>Missing attributes</h2>
+    <p>Two issues was brought up in the first image, images not having alt attributes and links not having discernible names. An alt attribute specifies an alternate text for an image, in the case of the image not displaying correctly.
+    The second point was about the links not having discernible names, which means that the link text is not descriptive enough to tell the user where the link will take them. To address both concerns, we added alt attributes to all images, but left the alt attributes empty of those images that is purely decorative.
+    To make the links more descriptive, we added aria-labels and titles. An aria-label is a descriptor to give meaning to elements that do not have functional meaning in itself. For example the arrow that scrolls down to the main content, has an aria-label that says "Scrolls down to main content". We also added titles to links which will show a tooltip while hovering over a link that take you to another page on this website, or if it would go to another website where it would go.</p>  
+    <br>
+    <p>The second image also is similar to our last problem with non-discernible link names, where the buttons on our index page used to only say 'Read More'. Hence, we changed the button text to 'Read More About Topical Section' and 'Read More About Accessibility Testing' to make it more descriptive.</p>
+    <h2>Color Contrast</h2>
+    <p>There was also the issue of color contrast, contrast is the difference in light between two colors, and is important for those with visual impairments. Hence we made sure to choose dark text on light backgrounds and light text on backgrounds with dark colors or shades. Also we added text shadow to the text on the hero of the introduction page, even though it passed the test, to make it even more readable.</p>
+    <h2>Additional Changes</h2>  
+    <p>Some changes we did to enhance accessibility that did not show up in the test, changing from static px values to relative em and rem vales, making a more responsive design and allows users to resize text. Adding an underline to links which changes color while hovering. We also inverted the colors of the buttons so it would be more apparent it is hovered over. Also adding a thicker font to the buttons to make it more readable as a suggestion from a Teaching Assistant. After applying all of these changes, did we make a final test of every site for mobile and desktop view</p> 
+    <h2>Final Test</h2>
+    <div class="final-test-images">
+      <img src="../images/index-html-test.png" alt="100 Accessibility score on introduction page">
+      <img src="../images/topical-html-test.png" alt="100 Accessibility score on topical page">
+      <img src="../images/accessibility-html-test.png" alt="100 accessibility score on accessibility page">
+      <img src="../images/canteen-html.png" alt="100 accessibility score on canteen page">
+      <img src="../images/othercampus-html-test.png" alt="100 accessibility score on other campus page">
+    </div>
+  </article>
+</main>
+  <footer>
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Address: Pilestredet 35, 0166 Oslo</p>
+      <p>Phone: +47 67 23 50 00</p>
+      <p>Email: post@oslomet.no</p>
+  </div>
+</footer>
+</body>
+</html>

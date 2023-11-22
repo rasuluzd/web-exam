@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>OsloMet Campus</title>
+            <link rel="stylesheet" type="text/css" href="./css/style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body>
+            <!--header is the section of a page that contains headings, logos and nav elements. Used here as a hero--->
+            <header class="hero" alt="Image of Pilestredet Campus, builiding P32">
+                <div class="hero-text">
+                    <h1>Welcome to OsloMet Campus</h1>
+                    <p>A university with about 20 000 students is bound to create some confusion. With this website you can easily navigate through important information about the Oslomet campus.</p>
+                    <p>Scroll down to explore</p>
+                    <a href="#main-content" title="Scrolls down to main content" aria-label="Scrolls down to main content"> <!--aria-label makes links discernible--><i class="fa fa-arrow-down">&darr;</i></a><!--How to implement the arrow icon to html found here: https://www.w3resource.com/icon/font-awesome/directional-icons/arrow-down.php, arrow symbol found here: https://www.w3schools.com/charsets/ref_utf_arrows.asp--->
+                </div>
+            </header>
+            <div class="main-page-wrapper">
+                <!--The semantic element aside, used here as a sidebar for the main content-->
+                <aside class="sidebar">
+                    <h2>News and Events</h2>
+                    <p>Latest news and events happening on campus.</p>
+                    <ul>
+                        <li>The P35 Canteen just reformed their salad bar!</li>
+                        <li>Free concert for all Oslomet-students</li>
+                        <li>Learn how to study better with this course by our professors</li>
+                        <li>Exam-season means a bigger appetite: Buffet-prices 50% this week!</li>
+                    </ul>
+                </aside>
+                <!--Main represents the main content of a webpage(excluding headers, footers, and sidebars), Used here as the explanation entails -->
+                <main class="main-page-content" id="main-content">
+                    <section>
+                        <img src="./images/topical.jpg" alt=""><!--Empty alt attributes are used in this page when the image is purely decorative-->
+                        <div>
+                            <h2>Topical</h2>
+                            <p>Discover the latest news and trends on campus with our topical page, featuring articles from student life to academic research</p>
+                            <a href="./secondary/topical.html"title="Goes to the Topical site"><button>Read More About Topical Section</button></a>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="./images/accessibility.jpg" alt="">
+                        <div>
+                            <h2>Accessibility Test</h2>
+                            <p>Our campus is committed to providing accessible web pages and regularly tests for accessibility using Google Lighthouse</p>
+                            <a href="./secondary/accessibility.html"title="Goes to accessibility site"><button>Read More About Accessibility Testing</button></a> 
+                        </div>
+                    </section>
+                    <section>
+                        <img src="./images/pilestredet35.jpg" alt="Pilestredet 35 outdoors">
+                        <div>
+                            <h2>Pilestredet 35 Canteen</h2>
+                            <p>Pilestredet 35 is one of the buildings on campus, featuring modern facilities, such as our canteen!</p>
+                            <a href="./secondary/canteen.html"title="Goes to the canteen site"><button>Explore Canteen</button></a>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="./images/campusbuildings.jpg" alt="Signs for directions of the different builidngs on Campus Pilestredet">
+                        <div>
+                            <h2>Explore other bulidings on campus</h2>
+                            <p>Discover and get known with the other buildings OsloMet campus has to offer</p>
+                            <a href="./secondary/other-campus.html"title="Goes to the 'explore campus' site"><button>Discover Campus</button></a>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <footer>
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>Address: Pilestredet 35, 0166 Oslo</p>
+                    <p>Phone: +47 67 23 50 00</p>
+                    <p>Email: post@oslomet.no</p>
+                </div>
+            </footer>
+        </body>
+    </html>
